@@ -1,6 +1,18 @@
 import { faker } from '@faker-js/faker'
 
-describe('template spec', () => {
+describe('Funcionalidade: Registro de utilizador', () => {
+  
+  before(()=>{
+    cy.fixture('known_user').then(user => {
+      cy.start()
+      cy.login(user.email, user.name, user.password)
+
+      // VERIFICAÇÃO: Valida se a modal de erro foi exibida com a mensagem correta
+      cy.get('#modalText')
+        .should('be.visible')
+        .and('contain', 'foi criada com sucesso');
+    });
+  })
 
   beforeEach(() => {
     cy.start()
@@ -11,42 +23,7 @@ describe('template spec', () => {
     const nome = faker.person.fullName();
     const senha = faker.internet.password({ length: 8, prefix: 'A1!' });
 
-    cy.contains('button', 'Registrar').click();
-    // APLICAÇÃO DE { force: true }:
-    // A animação de "flip card" desta aplicação impede a interação padrão do Cypress.
-    // Após múltiplas tentativas com esperas explícitas e asserções de visibilidade,
-    // o uso de { force: true } foi a única solução viável para garantir a execução do teste.
-    
-    // Interação 1: Email
-    cy.get('div.card__register')
-      .should('be.visible')
-      .find('input[name="email"]')
-      .type(email, { force: true });
-
-    // Interação 2: Nome (Re-selecionamos o 'div.card__register')
-    cy.get('div.card__register')
-      .find('input[name="name"]')
-      .type(nome, { force: true });
-
-    // Interação 3: Senha (Re-selecionamos novamente)
-    cy.get('div.card__register')
-      .find('input[name="password"]')
-      .type(senha, { force: true });
-
-    // Interação 4: Confirmação de Senha
-    cy.get('div.card__register')
-      .find('input[name="passwordConfirmation"]')
-      .type(senha, { force: true });
-
-    // Interação 5: Toggle de Saldo
-    cy.get('div.card__register')
-      .find('#toggleAddBalance')
-      .click({ force:true });
-
-    // Interação 6: Botão Cadastrar
-    cy.get('div.card__register')
-      .contains('button', 'Cadastrar')
-      .click({ force:true });
+    cy.login(email, nome, senha)
 
     // Validações finais
     cy.get('#modalText').should('be.visible');
@@ -56,5 +33,18 @@ describe('template spec', () => {
     });
 
     cy.get('#btnCloseModal').click();
+  });
+
+  it('CT02 - Deve falhar ao tentar registar um e-mail já existente (Fixture)', () => {
+    // Dados no fixtures
+    cy.fixture('known_user').then(user => {
+
+      cy.login(user.email, user.name, user.password)
+
+      // VERIFICAÇÃO: Valida se a modal de erro foi exibida com a mensagem correta
+      cy.get('#modalText')
+        .should('be.visible')
+        .and('have.text', 'Este email já está sendo usado.');
+    });
   });
 })

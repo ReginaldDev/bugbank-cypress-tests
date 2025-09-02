@@ -28,3 +28,40 @@ Cypress.Commands.add("start", ()=>{
     cy.visit('https://bugbank.netlify.app')
     cy.viewport(1440, 900)
 })
+
+Cypress.Commands.add("login", (email, nome, senha, )=>{
+    cy.contains('button', 'Registrar').click();
+
+    // Interação 1: Email
+    cy.get('div.card__register')
+      .should('be.visible')
+      .find('input[name="email"]')
+      .type(email, { force: true });
+
+    // Interação 2: Nome (Re-selecionamos o 'div.card__register')
+    cy.get('div.card__register')
+      .find('input[name="name"]')
+      .type(nome, { force: true });
+
+    // Interação 3: Senha (Re-selecionamos novamente)
+    cy.get('div.card__register')
+      .find('input[name="password"]')
+      .type(senha, { force: true });
+
+    // Interação 4: Confirmação de Senha
+    cy.get('div.card__register')
+      .find('input[name="passwordConfirmation"]')
+      .type(senha, { force: true });
+
+    // Interação 5: Toggle de Saldo
+    cy.get('div.card__register')
+      .find('#toggleAddBalance')
+      .click({ force: true });
+
+    // Interação 6: Botão Cadastrar
+    cy.get('div.card__register')
+      .contains('button', 'Cadastrar')
+      .click({ force: true });
+
+    
+})
