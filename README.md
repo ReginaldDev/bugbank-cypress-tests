@@ -23,7 +23,7 @@ O objetivo deste projeto é validar as funcionalidades críticas da aplicação 
 
 1.  **Clonar o repositório:**
     ```bash
-    git clone [https://github.com/ReginaldDev/bugbank-cypress-tests.git](https://github.com/ReginaldDev/bugbank-cypress-tests.git)
+    git clone (https://github.com/ReginaldDev/bugbank-cypress-tests.git)
     ```
 2.  **Navegar para a pasta do projeto:**
     ```bash
