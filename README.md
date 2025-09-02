@@ -65,6 +65,7 @@ The table below details the test cases planned for automation.
 *Project developed by Reginaldo Junior as part of his Quality Assurance portfolio.*
 
 </details>
+
 # Projeto de Automação de Testes E2E - BugBank 🐞
 
 Este repositório contém um projeto de automação de testes End-to-End (E2E) para a aplicação fictícia **BugBank**, desenvolvido com o objetivo de demonstrar competências em automação de testes web utilizando Cypress.
