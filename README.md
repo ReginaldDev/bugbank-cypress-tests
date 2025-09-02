@@ -1,3 +1,70 @@
+<details>
+<summary>🇬🇧 <strong>View in English</strong></summary>
+
+# E2E Test Automation Project - BugBank 🐞
+
+This repository contains an End-to-End (E2E) test automation project for the fictional **BugBank** application, developed to demonstrate skills in web test automation using Cypress.
+
+## 🎯 Objective
+
+The objective of this project is to validate the critical functionalities of the BugBank application by simulating a real user's workflow. The tests cover both happy path and sad path scenarios, ensuring the platform's robustness and reliability. This project showcases best practices in QA project organization, test scripting, and documentation.
+
+## 🛠️ Technologies Used
+
+* **Test Automation:** Cypress
+* **Language:** JavaScript
+* **Package Manager:** NPM
+* **CI/CD:** GitHub Actions (to be implemented)
+
+## 🚀 How to Run the Project
+
+**Prerequisites:**
+* Node.js installed
+* Git installed
+
+**Steps:**
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/ReginaldDev/bugbank-cypress-tests.git
+    ```
+2.  **Navigate to the project folder:**
+    ```bash
+    cd bugbank-cypress-tests
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Run tests in Headless mode (terminal):**
+    ```bash
+    npx cypress run
+    ```
+5.  **Open the interactive Cypress Test Runner:**
+    ```bash
+    npx cypress open
+    ```
+
+## 📋 Test Scenarios
+
+The table below details the test cases planned for automation.
+
+| ID   | Feature             | Test Scenario                                                | Priority | Status              |
+| :--- | :------------------ | :----------------------------------------------------------- | :------- | :------------------ |
+| **TC01** | User Registration   | Successfully register a new user with a balance.             | High     | To Be Implemented   |
+| **TC02** | User Registration   | Attempt to register a user with an existing email.           | Medium   | To Be Implemented   |
+| **TC03** | User Registration   | Validate required fields (email, name, passwords).           | Medium   | To Be Implemented   |
+| **TC04** | Login               | Perform login with a valid user.                             | High     | To Be Implemented   |
+| **TC05** | Login               | Attempt to login with an invalid password.                   | Medium   | To Be Implemented   |
+| **TC06** | Money Transfer      | Perform a successful transfer and validate account balances. | High     | To Be Implemented   |
+| **TC07** | Money Transfer      | Attempt a transfer with an amount greater than the balance.  | Medium   | To Be Implemented   |
+| **TC08** | Account Statement   | Validate that the completed transfer appears on the statement. | High     | To Be Implemented   |
+| **TC09** | Account Statement   | Validate that the statement balance matches the home page balance. | Low      | To Be Implemented   |
+
+---
+*Project developed by Reginaldo Junior as part of his Quality Assurance portfolio.*
+
+</details>
 # Projeto de Automação de Testes E2E - BugBank 🐞
 
 Este repositório contém um projeto de automação de testes End-to-End (E2E) para a aplicação fictícia **BugBank**, desenvolvido com o objetivo de demonstrar competências em automação de testes web utilizando Cypress.
@@ -23,7 +90,7 @@ O objetivo deste projeto é validar as funcionalidades críticas da aplicação 
 
 1.  **Clonar o repositório:**
     ```bash
-    git clone (https://github.com/ReginaldDev/bugbank-cypress-tests.git)
+    git clone https://github.com/ReginaldDev/bugbank-cypress-tests.git
     ```
 2.  **Navegar para a pasta do projeto:**
     ```bash
