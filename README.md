@@ -53,7 +53,7 @@ The table below details the test cases planned for automation.
 | :--- | :------------------ | :----------------------------------------------------------- | :------- | :------------------ |
 | **TC01** | User Registration   | Successfully register a new user with a balance.             | High     | Passed ✅   |
 | **TC02** | User Registration   | Attempt to register a user with an existing email.           | Medium   | Failed 🐛 [Bug #1](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/1)  |
-| **TC03** | User Registration   | Validate required fields (email, name, passwords).           | Medium   | To Be Implemented   |
+| **TC03** | User Registration   | Validate required fields (email, name, passwords).           | Medium   | Failed 🐛 [Bug #2](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/2)   |
 | **TC04** | Login               | Perform login with a valid user.                             | High     | To Be Implemented   |
 | **TC05** | Login               | Attempt to login with an invalid password.                   | Medium   | To Be Implemented   |
 | **TC06** | Money Transfer      | Perform a successful transfer and validate account balances. | High     | To Be Implemented   |
@@ -118,7 +118,7 @@ A tabela abaixo detalha os casos de teste planeados para a automação.
 | :--- | :------------------- | :----------------------------------------------------------- | :--------- | :-------------- |
 | **CT01** | Registo de Utilizador | Registar um novo utilizador com sucesso com saldo.           | Alta       | Aprovado ✅   |
 | **CT02** | Registo de Utilizador | Tentar registar um utilizador com um e-mail já existente.    | Média      | Falhou 🐛 [Bug #1](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/1)   |
-| **CT03** | Registo de Utilizador | Validar campos obrigatórios (e-mail, nome, senhas).        | Média      | A Implementar   |
+| **CT03** | Registo de Utilizador | Validar campos obrigatórios (e-mail, nome, senhas).        | Média      | Falhou 🐛 [Bug #2](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/2)   |
 | **CT04** | Login                | Realizar login com um utilizador válido.                     | Alta       | A Implementar   |
 | **CT05** | Login                | Tentar realizar login com uma senha inválida.                | Média      | A Implementar   |
 | **CT06** | Transferência        | Realizar uma transferência com sucesso e validar os saldos.  | Alta       | A Implementar   |

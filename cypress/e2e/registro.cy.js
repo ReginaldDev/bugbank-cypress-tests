@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker'
 
 describe('Funcionalidade: Registro de utilizador', () => {
-  
-  before(()=>{
+
+  before(() => {
     cy.fixture('known_user').then(user => {
       cy.start()
       cy.login(user.email, user.name, user.password)
@@ -47,4 +47,26 @@ describe('Funcionalidade: Registro de utilizador', () => {
         .and('have.text', 'Este email já está sendo usado.');
     });
   });
+
+  it.only('CT03 - Deve exibir mensagens de erro para campos obrigatórios', () => {
+
+    cy.contains('button', 'Registrar').click();
+
+    cy.get('div.card__register')
+      .contains('button', 'Cadastrar')
+      .click({ force: true });
+
+
+    cy.get('div.card__register')
+      .find('p.input__warging') // Encontra todos os parágrafos de erro
+      .should('have.length', 4) // Espera até que todos os 4 estejam no DOM
+      .and('be.visible');    
+
+    cy.get('input[name="email"] + p')
+      .should('exist')
+      // .and('have.css', 'opacity', '1')
+      // .and('be.visible')
+      .and('have.text', 'É campo obrigatório')
+
+  })
 })
