@@ -67,6 +67,23 @@ describe('Funcionalidade: Registro de utilizador', () => {
       // .and('have.css', 'opacity', '1')
       // .and('be.visible')
       .and('have.text', 'É campo obrigatório')
+    
+    cy.get('input[name="name"] + p')
+      .should('exist')
+      // .and('have.css', 'opacity', '1')
+      // .and('be.visible')
+      .and('have.text', 'É campo obrigatório')  
 
+    cy.get('input[name="password"] + p')
+      .should('exist')
+      // .and('have.css', 'opacity', '1')
+      // .and('be.visible')
+      .and('have.text', 'É campo obrigatório')
+      
+    cy.get('input[name="passwordConfirmation"] + p')
+      .should('exist')
+      // .and('have.css', 'opacity', '1')
+      // .and('be.visible')
+      .and('have.text', 'É campo obrigatório')
   })
 })
