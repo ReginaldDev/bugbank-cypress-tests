@@ -23,7 +23,7 @@ describe('Funcionalidade: Registro de utilizador', () => {
     const nome = faker.person.fullName();
     const senha = faker.internet.password({ length: 8, prefix: 'A1!' });
 
-    cy.login(email, nome, senha)
+    cy.register(email, nome, senha)
 
     // Validações finais
     cy.get('#modalText').should('be.visible');
