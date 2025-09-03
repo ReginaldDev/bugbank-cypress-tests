@@ -5,7 +5,7 @@ describe('Funcionalidade: Registro de utilizador', () => {
   before(() => {
     cy.fixture('known_user').then(user => {
       cy.start()
-      cy.login(user.email, user.name, user.password)
+      cy.register(user.email, user.name, user.password)
 
       // VERIFICAÇÃO: Valida se a modal de erro foi exibida com a mensagem correta
       cy.get('#modalText')
@@ -39,7 +39,7 @@ describe('Funcionalidade: Registro de utilizador', () => {
     // Dados no fixtures
     cy.fixture('known_user').then(user => {
 
-      cy.login(user.email, user.name, user.password)
+      cy.register(user.email, user.name, user.password)
 
       // VERIFICAÇÃO: Valida se a modal de erro foi exibida com a mensagem correta
       cy.get('#modalText')
@@ -48,7 +48,7 @@ describe('Funcionalidade: Registro de utilizador', () => {
     });
   });
 
-  it.only('CT03 - Deve exibir mensagens de erro para campos obrigatórios', () => {
+  it('CT03 - Deve exibir mensagens de erro para campos obrigatórios', () => {
 
     cy.contains('button', 'Registrar').click();
 
@@ -56,34 +56,33 @@ describe('Funcionalidade: Registro de utilizador', () => {
       .contains('button', 'Cadastrar')
       .click({ force: true });
 
-
     cy.get('div.card__register')
       .find('p.input__warging') // Encontra todos os parágrafos de erro
       .should('have.length', 4) // Espera até que todos os 4 estejam no DOM
-      .and('be.visible');    
+      .and('be.visible');
 
     cy.get('input[name="email"] + p')
       .should('exist')
       // .and('have.css', 'opacity', '1')
       // .and('be.visible')
       .and('have.text', 'É campo obrigatório')
-    
+
     cy.get('input[name="name"] + p')
       .should('exist')
       // .and('have.css', 'opacity', '1')
       // .and('be.visible')
-      .and('have.text', 'É campo obrigatório')  
+      .and('have.text', 'É campo obrigatório')
 
     cy.get('input[name="password"] + p')
       .should('exist')
       // .and('have.css', 'opacity', '1')
       // .and('be.visible')
       .and('have.text', 'É campo obrigatório')
-      
+
     cy.get('input[name="passwordConfirmation"] + p')
       .should('exist')
       // .and('have.css', 'opacity', '1')
       // .and('be.visible')
       .and('have.text', 'É campo obrigatório')
-  })
+  });
 })

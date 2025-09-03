@@ -29,7 +29,7 @@ Cypress.Commands.add("start", ()=>{
     cy.viewport(1440, 900)
 })
 
-Cypress.Commands.add("login", (email, nome, senha, )=>{
+Cypress.Commands.add("register", (email, nome, senha, )=>{
     cy.contains('button', 'Registrar').click();
 
     // Interação 1: Email
@@ -64,4 +64,20 @@ Cypress.Commands.add("login", (email, nome, senha, )=>{
       .click({ force: true });
 
     
+})
+
+Cypress.Commands.add("login", (email, senha)=>{
+  
+  cy.get('div.card__login')
+      .should('be.visible')
+      .find('input[name="email"]')
+      .type(email, { force: true });
+  
+  cy.get('div.card__login')
+    .find('input[name="password"]')
+    .type(senha, { force: true });  
+      
+  cy.get('div.card__login')
+    .contains('button', 'Acessar')
+    .click({ force: true });
 })
