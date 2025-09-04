@@ -5,7 +5,7 @@ describe('Funcionalidade: Registro de utilizador', () => {
   before(() => {
     cy.fixture('known_user').then(user => {
       cy.start()
-      cy.register(user.email, user.name, user.password)
+      cy.register(user.email, user.name, user.password, user.password)
 
       // VERIFICAÇÃO: Valida se a modal de erro foi exibida com a mensagem correta
       cy.get('#modalText')
@@ -23,7 +23,7 @@ describe('Funcionalidade: Registro de utilizador', () => {
     const nome = faker.person.fullName();
     const senha = faker.internet.password({ length: 8, prefix: 'A1!' });
 
-    cy.register(email, nome, senha)
+    cy.register(email, nome, senha, senha)
 
     // Validações finais
     cy.get('#modalText').should('be.visible');
@@ -35,11 +35,11 @@ describe('Funcionalidade: Registro de utilizador', () => {
     cy.get('#btnCloseModal').click();
   });
 
-  it('CT02 - Deve falhar ao tentar registar um e-mail já existente (Fixture)', () => {
+  it('CT02 - Deve falhar ao tentar registar um e-mail já existente (Fixture)', ()=> {
     // Dados no fixtures
     cy.fixture('known_user').then(user => {
 
-      cy.register(user.email, user.name, user.password)
+      cy.register(user.email, user.name, user.password, user.password)
 
       // VERIFICAÇÃO: Valida se a modal de erro foi exibida com a mensagem correta
       cy.get('#modalText')
@@ -84,5 +84,20 @@ describe('Funcionalidade: Registro de utilizador', () => {
       // .and('have.css', 'opacity', '1')
       // .and('be.visible')
       .and('have.text', 'É campo obrigatório')
+  });
+
+  it('CT04 - Deve exibir mensagem de erro ao tentar registar com senhas de confirmação diferentes', () => {
+    const email = faker.internet.email();
+    const nome = faker.person.fullName();
+    const senha = faker.internet.password({ length: 8, prefix: 'A1!' });
+    const senhaConfirm = faker.internet.password({ length: 8, prefix: 'A1!' });
+
+    cy.register(email, nome, senha, senhaConfirm)
+
+    // Validações finais
+    cy.get('#modalText')
+      .should('be.visible')
+      .and('have.text', 'As senhas não são iguais.\n')
+
   });
 })

@@ -29,7 +29,7 @@ Cypress.Commands.add("start", ()=>{
     cy.viewport(1440, 900)
 })
 
-Cypress.Commands.add("register", (email, nome, senha, )=>{
+Cypress.Commands.add("register", (email, nome, senha, senhaConfirm)=>{
     cy.contains('button', 'Registrar').click();
 
     // Interação 1: Email
@@ -51,7 +51,7 @@ Cypress.Commands.add("register", (email, nome, senha, )=>{
     // Interação 4: Confirmação de Senha
     cy.get('div.card__register')
       .find('input[name="passwordConfirmation"]')
-      .type(senha, { force: true });
+      .type(senhaConfirm, { force: true });
 
     // Interação 5: Toggle de Saldo
     cy.get('div.card__register')
