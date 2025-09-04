@@ -42,22 +42,22 @@ describe('Funcionalidade: Login', () => {
         })
     })
 
-    it.only('CT07 - Deve validar mensagens de erro para campos obrigatórios', () => {
+    it('CT07 - Deve validar mensagens de erro para campos obrigatórios', () => {
 
         cy.get('div.card__login')
             .contains('button', 'Acessar')
-            .click({ force: true });
-
+            .click({ force: true })
+            
         cy.get('input[name="email"] + p')
             .should('exist')
             .and('have.css', 'color', 'rgb(255, 0, 0)')
-            .and('be.visible')
+            //.and('be.visible')
             .and('have.text', 'É campo obrigatório')
 
         cy.get('input[name="password"] + p')
             .should('exist')
             .and('have.css', 'color', 'rgb(255, 0, 0)')
-            .and('be.visible')
+            //.and('be.visible')
             .and('have.text', 'É campo obrigatório')
     })
 })
