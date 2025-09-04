@@ -120,7 +120,7 @@ A tabela abaixo detalha os casos de teste planeados para a automação.
 | **CT02** | Registo de Utilizador | Tentar registar um utilizador com um e-mail já existente.    | Média      | Falhou 🐛 [Bug #1](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/1)   |
 | **CT03** | Registo de Utilizador | Validar campos obrigatórios (e-mail, nome, senhas).        | Média      | Falhou 🐛 [Bug #2](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/2)   |
 | **CT04** | Login                | Realizar login com um utilizador válido.                     | Alta       | Aprovado ✅   |
-| **CT05** | Login                | Tentar realizar login com uma senha inválida.                | Média      | A Implementar   |
+| **CT05** | Login                | Tentar realizar login com uma senha inválida.                | Média      | Aprovado ✅   |
 | **CT06** | Transferência        | Realizar uma transferência com sucesso e validar os saldos.  | Alta       | A Implementar   |
 | **CT07** | Transferência        | Tentar realizar uma transferência com valor maior que o saldo. | Média      | A Implementar   |
 | **CT08** | Extrato              | Validar que a transferência realizada consta no extrato.     | Alta       | A Implementar   |

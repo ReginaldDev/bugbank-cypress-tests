@@ -29,4 +29,16 @@ describe('Funcionalidade: Login', () => {
                 .should('be.visible')
         })
     })
+
+    it.only('CT05 - Deve tentar realizar login com uma senha inválida ', () => {
+
+        cy.fixture('login_user').then(user => {
+
+            cy.login(user.email, user.invalidPassword)
+
+            cy.get('#modalText')
+                .should('be.visible')
+                .and('have.text', 'Usuário ou senha inválido.\nTente novamente ou verifique suas informações!')
+        })
+    })
 })

@@ -1,5 +1,6 @@
 {
   "email": "login.user@teste.com",
   "name": "Login User",
-  "password": "StrongPassword123!"
+  "password": "StrongPassword123!",
+  "invalidPassword": "12345"
 }
