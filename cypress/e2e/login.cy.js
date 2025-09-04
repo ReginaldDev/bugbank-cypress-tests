@@ -30,7 +30,7 @@ describe('Funcionalidade: Login', () => {
         })
     })
 
-    it.only('CT05 - Deve tentar realizar login com uma senha inválida ', () => {
+    it('CT05 - Deve tentar realizar login com uma senha inválida ', () => {
 
         cy.fixture('login_user').then(user => {
 

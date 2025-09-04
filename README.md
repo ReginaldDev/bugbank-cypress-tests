@@ -51,15 +51,20 @@ The table below details the test cases planned for automation.
 
 | ID   | Feature             | Test Scenario                                                | Priority | Status              |
 | :--- | :------------------ | :----------------------------------------------------------- | :------- | :------------------ |
-| **TC01** | User Registration   | Successfully register a new user with a balance.             | High     | Passed ✅   |
-| **TC02** | User Registration   | Attempt to register a user with an existing email.           | Medium   | Failed 🐛 [Bug #1](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/1)  |
-| **TC03** | User Registration   | Validate required fields (email, name, passwords).           | Medium   | Failed 🐛 [Bug #2](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/2)   |
-| **TC04** | Login               | Perform login with a valid user.                             | High     | Passed ✅   |
-| **TC05** | Login               | Attempt to login with an invalid password.                   | Medium   | To Be Implemented   |
-| **TC06** | Money Transfer      | Perform a successful transfer and validate account balances. | High     | To Be Implemented   |
-| **TC07** | Money Transfer      | Attempt a transfer with an amount greater than the balance.  | Medium   | To Be Implemented   |
-| **TC08** | Account Statement   | Validate that the completed transfer appears on the statement. | High     | To Be Implemented   |
-| **TC09** | Account Statement   | Validate that the statement balance matches the home page balance. | Low      | To Be Implemented   |
+| **TC01** | User Registration   | Successfully register a new user with a balance.             | High     | Passed ✅           |
+| **TC02** | User Registration   | Attempt to register a user with an existing email.           | Medium   | Failed 🐛 [Bug #1](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/1) |
+| **TC03** | User Registration   | Validate required fields (email, name, passwords).           | Medium   | Failed 🐛 [Bug #2](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/2) |
+| **TC04** | User Registration   | Attempt to register with mismatching confirmation passwords. | Medium   | To Be Implemented   |
+| **TC05** | Login               | Perform login with a valid user.                             | High     | Passed ✅           |
+| **TC06** | Login               | Attempt to login with an invalid password.                   | Medium   | Passed ✅           |
+| **TC07** | Login               | Validate error messages for required fields.                 | Medium   | To Be Implemented   |
+| **TC08** | Money Transfer      | Perform a successful transfer and validate account balances. | High     | To Be Implemented   |
+| **TC09** | Money Transfer      | Attempt a transfer with an amount greater than the balance.  | Medium   | To Be Implemented   |
+| **TC10** | Money Transfer      | Attempt to transfer to an invalid account.                   | Medium   | To Be Implemented   |
+| **TC11** | Money Transfer      | Attempt to transfer a zero value amount.                     | Low      | To Be Implemented   |
+| **TC12** | Account Statement   | Validate that the completed transfer appears on the statement. | High     | To Be Implemented   |
+| **TC13** | Account Statement   | Validate outgoing transaction format (red color and negative sign). | Medium   | To Be Implemented   |
+| **TC14** | Account Statement   | Validate that the statement balance matches the home page balance. | Low      | To Be Implemented   |
 
 ---
 *Project developed by Reginaldo Junior as part of his Quality Assurance portfolio.*
@@ -116,15 +121,20 @@ A tabela abaixo detalha os casos de teste planeados para a automação.
 
 | ID   | Funcionalidade       | Cenário de Teste                                             | Prioridade | Status          |
 | :--- | :------------------- | :----------------------------------------------------------- | :--------- | :-------------- |
-| **CT01** | Registo de Utilizador | Registar um novo utilizador com sucesso com saldo.           | Alta       | Aprovado ✅   |
-| **CT02** | Registo de Utilizador | Tentar registar um utilizador com um e-mail já existente.    | Média      | Falhou 🐛 [Bug #1](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/1)   |
-| **CT03** | Registo de Utilizador | Validar campos obrigatórios (e-mail, nome, senhas).        | Média      | Falhou 🐛 [Bug #2](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/2)   |
-| **CT04** | Login                | Realizar login com um utilizador válido.                     | Alta       | Aprovado ✅   |
-| **CT05** | Login                | Tentar realizar login com uma senha inválida.                | Média      | Aprovado ✅   |
-| **CT06** | Transferência        | Realizar uma transferência com sucesso e validar os saldos.  | Alta       | A Implementar   |
-| **CT07** | Transferência        | Tentar realizar uma transferência com valor maior que o saldo. | Média      | A Implementar   |
-| **CT08** | Extrato              | Validar que a transferência realizada consta no extrato.     | Alta       | A Implementar   |
-| **CT09** | Extrato              | Validar que o saldo do extrato corresponde ao saldo da home. | Baixa      | A Implementar   |
+| **CT01** | Registo de Utilizador | Registar um novo utilizador com sucesso com saldo.           | Alta       | Aprovado ✅     |
+| **CT02** | Registo de Utilizador | Tentar registar um utilizador com um e-mail já existente.    | Média      | Falhou 🐛 [Bug #1](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/1) |
+| **CT03** | Registo de Utilizador | Validar campos obrigatórios (e-mail, nome, senhas).        | Média      | Falhou 🐛 [Bug #2](https://github.com/ReginaldDev/bugbank-cypress-tests/issues/2) |
+| **CT04** | Registo de Utilizador | Tentar registar com senhas de confirmação diferentes.        | Média      | A Implementar   |
+| **CT05** | Login                | Realizar login com um utilizador válido.                     | Alta       | Aprovado ✅     |
+| **CT06** | Login                | Tentar realizar login com uma senha inválida.                | Média      | Aprovado ✅     |
+| **CT07** | Login                | Validar mensagens de erro para campos obrigatórios.          | Média      | A Implementar   |
+| **CT08** | Transferência        | Realizar uma transferência com sucesso e validar os saldos.  | Alta       | A Implementar   |
+| **CT09** | Transferência        | Tentar realizar uma transferência com valor maior que o saldo. | Média      | A Implementar   |
+| **CT10** | Transferência        | Tentar transferir para uma conta inválida.                   | Média      | A Implementar   |
+| **CT11** | Transferência        | Tentar transferir um valor igual a zero.                     | Baixa      | A Implementar   |
+| **CT12** | Extrato              | Validar que a transferência realizada consta no extrato.     | Alta       | A Implementar   |
+| **CT13** | Extrato              | Validar formatação do valor de saída (cor vermelha e sinal negativo). | Média      | A Implementar   |
+| **CT14** | Extrato              | Validar que o saldo do extrato corresponde ao saldo da home. | Baixa      | A Implementar   |
 
 ---
 *Projeto desenvolvido por Reginaldo Junior como parte do seu portfólio de Quality Assurance.*
